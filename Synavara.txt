@@ -1,1 +1,17 @@
-
+Andmebaas - База данных (AB/БД)
+Andmebaaside haldus - Администрирование базами данных
+Andbaasi haldussüsteem - Система управления базами данных (SQL Server/Oracle/MS Access/XAMPP)
+Andmed - Данные
+Tabel - Таблица
+Veerg/väli - Столбец
+Rida/kirje - Строчки/Запись
+Päring - Запрос
+Loo - Создать
+Laadi alla - Скачать
+Laadi üles - Установить
+Rakendus - Приложение
+Varundamine - Резервное копирование
+Taastamine - Восстановление
+Päringukeel - Язык источника
+Relatsiooni andmebaas - База данных отношений
+Seos - Отношения
