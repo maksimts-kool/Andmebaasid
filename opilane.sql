@@ -90,3 +90,20 @@ select * from Language;
 select * from opilane;
 insert into keeleValik(valikuNimetus,opilaneId,Language)
 values ('Valik B',2,3)
+
+------------------------------------------------------------------------
+VIGANE KOOD
+  
+create table oppimine(
+oppimineId int primary key identity(1,1),
+aine text,
+aasta int,
+opetaja varchar(50),
+keskhinn int,
+foreign key (keskhinn) references opilane(opilaneId)
+)
+
+insert into oppimine(aine,aasta,opetaja)
+values ('Andmebaasid',2025,'Opetaja')
+
+select * from oppimine;
