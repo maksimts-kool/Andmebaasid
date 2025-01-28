@@ -15,3 +15,4 @@ Taastamine - Восстановление
 Päringukeel - Язык источника
 Relatsiooni andmebaas - База данных отношений
 Seos - Отношения
+Primaarne võti - Первичный ключ
