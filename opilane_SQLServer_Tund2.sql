@@ -5,7 +5,6 @@ CREATE TABLE Category (
 idCategory int Primary key identity(1,1), 
 CategoryName varchar(25) UNIQUE
 );
-SELECT * FROM Category;
 INSERT INTO Category (CategoryName)
 VALUES ('Jook'), ('Söök');
 
@@ -18,10 +17,12 @@ CREATE TABLE Product (
 idProduct INT PRIMARY KEY IDENTITY(1,1), 
 ProductName VARCHAR(25), 
 idCategory int, 
-Price decimal(3,1),
+Price decimal(5,2),
 FOREIGN KEY (idCategory) REFERENCES Category(idCategory)
 );
 
-SELECT * FROM Product;
 INSERT INTO Product (ProductName, idCategory, Price)
-VALUES ('Coca-Cola', 1, 1.50), ('Pizza', 2, 8.00);
+VALUES ('Coca-Cola', 1, 1.50), ('Pizza', 2, 8.21), ('Juustuburger', 2, 4.29), ('Jäätis', 2, 1.76), ('Tee', 1, 0.60);
+
+SELECT * FROM Product;
+SELECT * FROM Category;
