@@ -24,5 +24,28 @@ FOREIGN KEY (idCategory) REFERENCES Category(idCategory)
 INSERT INTO Product (ProductName, idCategory, Price)
 VALUES ('Coca-Cola', 1, 1.50), ('Pizza', 2, 8.21), ('Juustuburger', 2, 4.29), ('Jäätis', 2, 1.76), ('Tee', 1, 0.60);
 
+CREATE TABLE Sale (
+	idSale INT PRIMARY KEY IDENTITY(1,1), 
+	idProduct INT, 
+	FOREIGN KEY (idProduct) REFERENCES Product(idProduct),
+	idCustomer INT, 
+	Count_ INT, 
+	DateOfSale DATE,
+);
+
+--Kustuta kõik kirjad
+DELETE FROM Sale;
+
+CREATE TABLE Customer (
+    idCustomer INT PRIMARY KEY IDENTITY(1,1),
+    Name_ VARCHAR(30),
+    Contact TEXT,
+);
+
+--Tabeli struktuuri muutmine --> FK lisamine
+ALTER TABLE Sale ADD FOREIGN KEY (idCustomer) REFERENCES Customer(idCustomer);
+
 SELECT * FROM Product;
 SELECT * FROM Category;
+SELECT * FROM Sale;
+SELECT * FROM Customer;
