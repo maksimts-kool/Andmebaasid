@@ -107,3 +107,55 @@ insert into oppimine(aine,aasta,opetaja)
 values ('Andmebaasid',2025,'Opetaja')
 
 select * from oppimine;
+
+
+-------------------- PROCEDURES ------------------
+CREATE PROCEDURE lisaOpilane
+@eesnimi varchar(25),
+@perenimi varchar(25),
+@synniaeg date,
+@stip bit,
+@aadress text,
+@keskhind decimal(2,1)
+AS
+BEGIN
+INSERT INTO opilane(eesnimi,perenimi,synniaeg,stip,aadress,keskhind)
+VALUES (@eesnimi,@perenimi,@synniaeg,@stip,@aadress,@keskhind)
+SELECT * FROM opilane;
+END;
+
+EXEC lisaOpilane 'Some','Thing','2004-07-21',1,'Tallinn',2.3;
+EXEC lisaOpilane 'Come','Thin','2001-08-11',1,'Tallinn',4.5;
+
+CREATE PROCEDURE kustutaOpilane
+@deleteId int
+AS
+BEGIN
+DELETE FROM opilane WHERE opilaneId=@deleteId;
+SELECT * FROM opilane;
+END;
+
+EXEC kustutaOpilane 1;
+
+CREATE PROCEDURE otsiOpilane
+@taht CHAR(1)
+AS
+BEGIN
+SELECT * FROM opilane
+WHERE eesnimi LIKE @taht + '%';
+END;
+
+EXEC otsiOpilane 'C';
+
+CREATE PROCEDURE OpilaneStipMuuda
+@id INT,
+@uusstip BIT
+AS
+BEGIN
+SELECT * FROM opilane;
+UPDATE opilane SET stip=@uusstip
+WHERE opilaneId=@id;
+SELECT * FROM opilane;
+END;
+
+EXEC OpilaneStipMuuda 2,0;
