@@ -53,3 +53,22 @@ WHERE linnNimi LIKE @taht + '%'
 END;
 
 EXEC linnaOtsing T;
+
+--Tabeli uuendamine - kasvab 10% võrra
+UPDATE linn SET rahvaArv*=1.1; 
+
+UPDATE linn SET rahvaArv*=1.1
+WHERE linnId=3;
+
+CREATE PROCEDURE rahvaArvuUuendus
+@linnId int,
+@koef decimal(2,1)
+AS
+BEGIN
+SELECT * FROM linn;
+UPDATE linn SET rahvaArv*=@koef
+WHERE linnId=@linnId;
+SELECT * FROM linn;
+END;
+
+EXEC rahvaArvuUuendus 1, 2.3;
