@@ -171,4 +171,4 @@ order by stip desc
 -- eesnimed sisaldavad t ja stip (60-70)
 SELECT eesnimi, stip
 FROM opilane
-WHERE eesnimi LIKE 'T%' AND stip BETWEEN 60 AND 70
+WHERE eesnimi LIKE '%t%' AND stip BETWEEN 60 AND 70
